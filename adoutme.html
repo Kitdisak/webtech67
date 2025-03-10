@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .navbar {
+            text-align: center;
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            padding: 10px;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+        }
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .profile {
+            text-align: center;
+            margin: 0 auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .timetable {
+            text-align: center;
+            max-width: 90%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow-x: auto;
+            display: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .myplace {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .myfriends {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+        .fakeimg {
+        height: 200px;
+        background: #aaa;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #83bee094;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="p-5 bg-primary text-white text-center">
+        <h1>My First Bootstrap 5 Page</h1>
+        <p>Resize this responsive page to see the effect!</p>
+    </div>
+    <ul class="nav nav-tabs">
+        <a class="nav-link" onclick="setActive(this); toggleAboutMe();">About Me</a>
+        <a class="nav-link" onclick="setActive(this); toggleTimeTable();">Time Table</a>
+        <a class="nav-link" onclick="setActive(this); toggleMyPlace();">My Place</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">My Friends</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">นายกฤษฎา นาคะพงศ์</a></li>
+            <li><a class="dropdown-item" href="#">ชาญชัญญ์ เอื้อประเสริฐ</a></li>
+            <li><a class="dropdown-item" href="#">นายณัฐดนัย สันติชวลิตสกุล</a></li>
+        </ul>
+    </li>
+    </ul>
+    <div class="profile" id="profile">
+        <div class="col-sm-4">
+                <h2>About Me</h2>
+                <h5>Photo of me:</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+                <h3 class="mt-4">Some Links</h3>
+                <p>Lorem ipsum dolor sit ame.</p>
+                <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                </ul>
+                <hr class="d-sm-none">
+            </div>
+            <div class="col-sm-8">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Dec 7, 2020</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                <h2 class="mt-5">TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2020</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+            </div>
+        </div>
+    <div class="timetable" id="timetable">
+        <h2><b>Time Table</b></h2>
+        <table width="1280">
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th style="background-color:gray;">Day/Time</th>
+                    <th style="background-color:gray;">07:35 - 08:25</th>
+                    <th style="background-color:gray;">08:30 - 09:20</th>
+                    <th style="background-color:gray;">09:25 - 10:15</th>
+                    <th style="background-color:gray;">10:20 - 11:10</th>
+                    <th style="background-color:gray;">11:15 - 12:05</th>
+                    <th class ="black" style="background-color:gray;">--</th>
+                    <th style="background-color:gray;">13:00 - 13:50</th>
+                    <th style="background-color:gray;">13:55 - 14:45</th>
+                    <th style="background-color:gray;">14:50 - 15:40</th>
+                    <th style="background-color:gray;">15:45 - 16:35</th>
+                    <th style="background-color:gray;">16:40 - 17:30</th>
+                    <th style="background-color:gray;">17:35 - 18:25</th>
+                    <th style="background-color:gray;">18:30 - 19:20</th>
+                    <th style="background-color:gray;">19:25 - 20:15</th>
+                    <th style="background-color:gray;">20:20 - 21:10</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>จันทร์</th>
+                    <td></td>
+                    <td></td>
+                    <td colspan="3" class="blue" style="background-color: LightPink;"><ins style="color:DodgerBlue;">SU203-162</ins>(3)<br>Sect:2032, เรียนออนไลน์<br>ออนไลน์</td>
+                    <td style="background-color:Tomato;"></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="blue" style="background-color: LemonChiffon;"><ins style="color:DodgerBlue;">520112-165</ins>(1)<br>Sect:1,1227/1 ว.1 <br>วิทย์1</td>
+                    <td colspan="3" class="blue" style="background-color: lightGreen;"><ins style="color:DodgerBlue;">SU401-162</ins>(3)<br>Sect:2053, ศษ4306<br>โสมสวลี</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>อังคาร</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="blue" style="background-color:lightBlue;"><ins style="color:DodgerBlue;">SU202-162</ins>(3)<br>Sect:2086, เรียนออนไลน์<br>ออนไลน์</td>
+                    <td style="background-color:Tomato;"></td>
+                    <td colspan="2" class="blue" style="background-color: Honeydew;"><ins style="color:DodgerBlue;">517122-165</ins>(4)<br>Sect:2, 1227/1 ว.1 <br> วิทย์1</td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="blue" style="background-color: Honeydew;"><ins style="color:DodgerBlue;">517122-165</ins>(4)<br>Sect:2, 1227/1 ว.1 <br>วิทย์1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>พุธ</th>
+                    <td></td>
+                    <td colspan="2" class="blue" style="background-color: Honeydew;"><ins style="color:DodgerBlue;">517122-165</ins>(4)<br>Sect:2, ร.วท.2 <br>รวมวิทย์</td>
+                    <td colspan="2" class="blue" style="background-color: Honeydew;"><ins style="color:DodgerBlue;">517122-165</ins>(4)<br>Sect:2, 1227/1 ว.1 <br> วิทย์1</td>
+                    <td style="background-color:Tomato;"></td>
+                    <td></td>
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>พฤหัสบดี</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2" class="blue" style="background-color: lightBlue;"><ins style="color:DodgerBlue;">SU202-162</ins>(3)<br>Sect:2086, เรียนออนไลน์<br>ออนไลน์</td>
+                    <td style="background-color:Tomato;"></td>
+                    <td></td>
+                    <td colspan="3" class="blue" style="background-color: Wheat;"><ins style="color:DodgerBlue;">520111-165</ins>(3)<br>Sect:1 ร.วท.1 <br> รวมวิทย์</t>
+                    <td colspan="3" class="blue" style="background-color: Salmon;"><ins style="color:DodgerBlue;">SU102-162</ins>(3)<br>Sect:2215,ศษ4308 <br> โสมสวลี</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>ศุกร์</th>
+                    <td ></td>
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="background-color:Tomato;"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="myplace" id="myplace">
+        <h1><b>My Place</b></h1>
+        <p class="text-bg-success"><font face="tahoma" size="5" color="#ffffff">จังหวัด :<b> ราชบุรี</b></font></a></p>
+        <p class="text-bg-success"><font face="tahoma" size="5" color="#ffffff">อำเภอ :<b> โพธาราม</b></font></a></p>
+        <p class="text-bg-success"><font face="tahoma" size="5" color="#ffffff">ตำบล :<b> บางโตนด</b></font></a></p>
+    </div>
+    <script>
+    function setActive(link) {
+        document.querySelectorAll('.nav-link').forEach(item => {
+            item.classList.remove("active");
+        });
+        link.classList.add("active");
+    }
+    function hideAll() {
+        document.getElementById("profile").style.display = "none";
+        document.getElementById("timetable").style.display = "none";
+        document.getElementById("myplace").style.display = "none";
+    }
+    function toggleAboutMe() {
+        hideAll();
+        document.getElementById("profile").style.display = "block";
+    }
+    function toggleTimeTable() {
+        hideAll();
+        document.getElementById("timetable").style.display = "block";
+    }
+    function toggleMyPlace() {
+        hideAll();
+        document.getElementById("myplace").style.display = "block";
+    }
+    </script>
+    </body>
+</html>
